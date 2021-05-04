@@ -7,7 +7,7 @@ Github profile: https://github.com/neel-p1103
 package com.neelp;
 
 import javax.swing.*;
-import java.util.Scanner;
+
 
 public class Email {
     private String firstName;
@@ -25,11 +25,11 @@ public class Email {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Name: " + firstName + " " + lastName);
+        JOptionPane.showMessageDialog(null,"Name : " + firstName + " " + lastName);
         this.department = setDepartment();
-        System.out.println("Department: " + department);
+        JOptionPane.showMessageDialog(null, "Department: " + this.department);
         this.password = genPassword(defPassLen);
-        System.out.println("Your password is: " + this.password);
+        JOptionPane.showMessageDialog(null,"Password: " + this.password);
 
         //Combine everything to create email
         if(department.equals("")){
