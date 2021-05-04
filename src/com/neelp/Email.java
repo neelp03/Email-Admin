@@ -6,6 +6,7 @@ Github profile: https://github.com/neel-p1103
 */
 package com.neelp;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Email {
@@ -45,14 +46,7 @@ public class Email {
     //private method to get the users department called in the constructor
     private String setDepartment(){
 
-        System.out.println("Department Number:\n1:\tSales \n2:\tDevelopment\n3:\tAccounting\n0:\tNone of the above\n");
-
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the department number: ");
-        int depChoice = sc.nextInt();
-        System.out.println();
-        sc.close();
-
+        int depChoice = Integer.parseInt(JOptionPane.showInputDialog("Department:\n1:\tSales \n2:\tDevelopment\n3:\tAccounting\n0:\tNone of the above\n "));
         switch(depChoice){
             case 1: return "Sales";
             case 2: return "Development";
