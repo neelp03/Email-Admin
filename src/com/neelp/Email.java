@@ -10,15 +10,11 @@ import javax.swing.*;
 
 
 public class Email {
-    private String firstName;
-    private String lastName;
-    private String password;
-    private int defPassLen = 12;
-    private String department;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String department;
+    private final String email;
     private String alternateEmail;
-    private String company = "company.com";
-    private int mailboxCapacity = 750;
 
     //Constructor to receive the first and last name
     public Email(String firstName, String lastName) {
@@ -28,10 +24,12 @@ public class Email {
         JOptionPane.showMessageDialog(null,"Name : " + firstName + " " + lastName);
         this.department = setDepartment();
         JOptionPane.showMessageDialog(null, "Department: " + this.department);
-        this.password = genPassword(defPassLen);
-        JOptionPane.showMessageDialog(null,"Password: " + this.password);
+        int defPassLen = 12;
+        String password = genPassword(defPassLen);
+        JOptionPane.showMessageDialog(null,"Password: " + password);
 
         //Combine everything to create email
+        String company = "company.com";
         if(department.equals("")){
             email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@"
                     + "" + company;
@@ -71,31 +69,13 @@ public class Email {
     }
 
 
-
-    //setter and getter methods
-    public void setMailboxCapacity(int cap){
-        this.mailboxCapacity = cap;
-    }
-
-
     public void setAltEmail(String newEmail){
         this.alternateEmail = newEmail;
     }
 
 
-    public void changePassword(String newPass){
-        this.password = newPass;
-    }
-
-
-
-    public int getMailboxCapacity(){return mailboxCapacity;}
-
-    public String getAlternateEmail(){return alternateEmail;}
-
-
-
     public String display(){
+        int mailboxCapacity = 750;
         return "Name: " + firstName + " " + lastName +
                 "\nDepartment: " + department +
                 "\nCompany email: " + email +

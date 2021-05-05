@@ -8,9 +8,7 @@ Github profile: https://github.com/neel-p1103
 package com.neelp;
 
 import javax.swing.*;
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EmailApp {
 
@@ -18,7 +16,7 @@ public class EmailApp {
 
         Email email;
         Employees employees;
-        ArrayList<Email> empArr = new ArrayList<Email>();
+        ArrayList<Email> empArr = new ArrayList<>();
 
         int numEmployees = Integer.parseInt(JOptionPane.showInputDialog(null, "How many employees"
                 + " would you like to add?"));
@@ -34,7 +32,7 @@ public class EmailApp {
             email.setAltEmail("example@example.com");
             //JOptionPane.showMessageDialog(null,"Alternate email: "+email.getAlternateEmail());
 
-            JOptionPane.showMessageDialog(null,email.display());
+            if(i<numEmployees-1) JOptionPane.showMessageDialog(null,"Add the next employee");
         }
 
         employees = new Employees(empArr);

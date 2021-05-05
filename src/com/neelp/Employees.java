@@ -4,14 +4,11 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Employees {
-    private Email em1;
-    private ArrayList<Email> empArr = new ArrayList<Email>();
+    private final ArrayList<Email> empArr = new ArrayList<>();
 
     public Employees(ArrayList<Email> em) {
-        this.em1 = em1;
-        for(Email temp : em){
-            empArr.add(temp);
-        }
+        empArr.addAll(em);
+
     }
 
     public void getEmpArr(){
