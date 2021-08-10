@@ -8,15 +8,11 @@ public class Employees {
 
     public Employees(ArrayList<Email> em) {
         empArr.addAll(em);
-
     }
 
     public void getEmpArr(){
         for(Email i : empArr){
             JOptionPane.showMessageDialog(null,i.display());
         }
-
-
     }
-
 }
