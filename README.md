@@ -7,7 +7,7 @@
 * [Cloning repository](#Install-here)
 
 ### Project goal
-I have here a program for companies to create email and password for a new employee by simply inputing the following: firstname, lastname, and department. Taking these inputs the program will create an email in this format: firstname.lastname@department.company.com and will also create a 12 characters long password (may include symbols).
+This program is designed to generate an email using the firstname, lastname, and department an employee works in. Taking these inputs the program will create an email in this format: firstname.lastname@department.company.com and will also create a 12 characters long password (may include symbols).
 	
 ### Technologies
 Project is created using:
