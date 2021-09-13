@@ -44,7 +44,15 @@ public class Email {
     //private method to get the users department called in the constructor
     private String setDepartment(){
 
-        int depChoice = Integer.parseInt(JOptionPane.showInputDialog("Department:\n1:\tSales \n2:\tDevelopment\n3:\tAccounting\n0:\tNone of the above\n "));
+        int depChoice = Integer.parseInt(
+                JOptionPane.showInputDialog(
+                        null,
+                        "Department:\n1:\tSales \n2:\tDevelopment\n3:\tAccounting\n0:\tNone of the above\n "
+                        , "Email Administration Application",
+                        JOptionPane.QUESTION_MESSAGE
+                )
+        );
+
         switch(depChoice){
             case 1: return "Sales";
             case 2: return "Development";
