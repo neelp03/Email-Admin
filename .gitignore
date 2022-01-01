@@ -1,5 +1,5 @@
 # removes selected file
-.idea
+/.idea
 Email Admin.iml
-out
-.gradle
+/out
+/.gradle/
