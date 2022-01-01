@@ -20,6 +20,38 @@ public class EmailApp {
         }
     }
 
+    public static void addInfo(Employees employees, int numEmployees) {
+        for(int i = 0; i < numEmployees; i++){
+
+            String firstName = JOptionPane.showInputDialog(
+                    null,
+                    "Enter first name: ",
+                    "Email Administration Application",
+                    JOptionPane.NO_OPTION
+            );
+
+            String lastName = JOptionPane.showInputDialog(
+                    null,
+                    "Enter last name: ",
+                    "Email Administration Application",
+                    JOptionPane.NO_OPTION
+            );
+
+            employees.add(new Email(firstName, lastName));
+
+            employees.get(i).setAltEmail("example@example.com");
+            //JOptionPane.showMessageDialog(null,"Alternate email: "+email.getAlternateEmail());
+
+            if(i<numEmployees-1)
+                JOptionPane.showMessageDialog(
+                        null,
+                        "                   Add the next employee",
+                        "Email Administration Application",
+                        JOptionPane.NO_OPTION
+                );
+        }
+    }
+
     public static void main(String[] args) {
 
         Employees employees = new Employees();
@@ -50,36 +82,7 @@ public class EmailApp {
             // if-else for still want to add employee
         }
 
-        for(int i = 0; i < numEmployees; i++){
-
-            String firstName = JOptionPane.showInputDialog(
-                    null,
-                    "Enter first name: ",
-                    "Email Administration Application",
-                    JOptionPane.NO_OPTION
-            );
-
-            String lastName = JOptionPane.showInputDialog(
-                    null,
-                    "Enter last name: ",
-                    "Email Administration Application",
-                    JOptionPane.NO_OPTION
-            );
-
-            employees.add(new Email(firstName, lastName));
-
-            employees.get(i).setAltEmail("example@example.com");
-            //JOptionPane.showMessageDialog(null,"Alternate email: "+email.getAlternateEmail());
-
-            if(i<numEmployees-1)
-                JOptionPane.showMessageDialog(
-                        null,
-                        "                   Add the next employee",
-                        "Email Administration Application",
-                        JOptionPane.NO_OPTION
-                );
-        }
-
+        addInfo(employees, numEmployees);
         employees.getEmpArr();
 
         System.exit(0);

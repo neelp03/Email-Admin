@@ -14,6 +14,7 @@ public class Email {
     private final String lastName;
     private final String department;
     private final String email;
+    private String password;
     private String alternateEmail;
 
     //Constructor to receive the first and last name
@@ -24,10 +25,6 @@ public class Email {
         JOptionPane.showMessageDialog(null,"Name : " + firstName + " " + lastName);
         this.department = setDepartment();
         JOptionPane.showMessageDialog(null, "Department: " + this.department);
-        int defPassLen = 12;
-        String password = genPassword(defPassLen);
-        JOptionPane.showMessageDialog(null,"Password: " + password);
-
         //Combine everything to create email
         String company = "company.com";
         if(department.equals("")){
@@ -66,7 +63,7 @@ public class Email {
     //private method to create a password with a specified length
     private String genPassword(int len){
 
-        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghisjklmnopqrtsuvwxyz!@#$%&";
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghisjklmnopqrtsuvwxyz!@#$%&.";
         char[] pass = new char[len];
 
         for(int i = 0; i < pass.length; i++){
@@ -87,6 +84,7 @@ public class Email {
         return "Name: " + firstName + " " + lastName +
                 "\nDepartment: " + department +
                 "\nCompany email: " + email +
+                "\nPassword : " + genPassword(12) +
                 "\nMailbox capacity: " + mailboxCapacity + " gb" +
                 "\nAlternate email: " + alternateEmail;
 
